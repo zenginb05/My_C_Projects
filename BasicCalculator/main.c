@@ -2,6 +2,11 @@
 #include <stdlib.h>
 #include <math.h>
 
+
+float FactRecFunc(float number);
+
+
+
 void main() {
 
 int main_operation=0,second_operation=0,third_operation=0,operation=0;
@@ -14,7 +19,7 @@ scanf("%d",&main_operation);
 if (main_operation==0)
 {
     
-printf("Please Select What U Want \n [0]Addition\n [1]Subtraction\n [2]Multiplication\n [3]Division\n [4]Exponent Numbers\n [5]Radical Numbers\n");
+printf("Please Select What U Want \n [0]Addition\n [1]Subtraction\n [2]Multiplication\n [3]Division\n [4]Exponent Numbers\n [5]Radical Numbers\n [6]Factorial \n");
 printf("\t ===>");
 scanf("%d",&operation);
 
@@ -71,14 +76,19 @@ case 5:
     printf("\n");
     printf("%2.f ^(1/2) = %2.f",main_number,sqrt(main_number));
     break;
+case 6:
+    printf("Please enter MAIN number =>");
+    scanf("%f",&main_number);
+    printf("\n");
+    printf(" %2.f! = %2.f",main_number,FactRecFunc(main_number));
+    break;
+
 
 default:
     printf("U enter wrong number, Please restart the program...");
     break;
 }
 }
-
-
 
 else if (main_operation==1)
 {
@@ -185,8 +195,7 @@ else if (main_operation==1)
 
 }
 
-
-
-
-
 }
+
+
+float FactRecFunc(float number);
