@@ -30,25 +30,26 @@ game();
 }
 
 
-void game(){
-
+void game() {
     status();
-    for (int i = 0; i < 9; i++)
-    {
+    for (int i = 0; i < 9; i++) {
+        int MoveCheck = 0;
+        while (!MoveCheck) {
+            printf("%s, please enter your coordinates (row and column): ", (i % 2 == 0) ? player1 : player2);
+            scanf("%d %d", &x, &y);
+            
+            if (x < 1 || x > 3 || y < 1 || y > 3) {
+                printf("Invalid coordinates. Please enter values between 1 and 3.\n");
+            } else if (table[x-1][y-1] != '_') {
+                printf("Cell already occupied. Please enter different coordinates.\n");
+            } else {
+                MoveCheck = 1;
+            }
+        }
         
-
-        printf("%s please enter your coordinate\n ",player1);
-        scanf("%d %d",&x,&y);
-        table[x-1][y-1]='X';
-
-        status();
-
-        printf("%s please enter your coordinate\n ",player2);
-        scanf("%d %d",&x,&y);
-        table[x-1][y-1]='O';
+        table[x-1][y-1] = (i % 2 == 0) ? 'X' : 'O';
         status();
     }
-
 }
 
 
