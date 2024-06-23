@@ -27,6 +27,8 @@ int romanToInt(char *s) {
 }
 
 int main() {
+  
+  //test values
   char que1[] = "MCMVII";
   char que2[] = "MMXI";
   char que3[] = "XC";
